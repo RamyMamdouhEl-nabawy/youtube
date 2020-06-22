@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="container media-container">
     <div class="row">
       <div class="media-container__video col-md-4 col-6">
@@ -16,6 +17,15 @@
         <div class="row">
           <div class="media-container__live-icon" v-if="LiveVideo"></div>
           <div class="media-container__title">{{videoTitle}}</div>
+=======
+  <div class="media-container container">
+    <div class="row">
+      <div class="media-container__video col-6"></div>
+      <div class="media-container__details-holder col-6">
+        <div class="row">
+          <div class="media-container__live-icon" v-if="LiveVideo"></div>
+          <div class="media-container__title">Ramy Mamdouh El-Nabawy</div>
+>>>>>>> ftr-videoHolder
         </div>
         <div class="row">
           <div class="media-container__validation-icon" v-if="LiveVideo"></div>
@@ -24,6 +34,7 @@
             <span class="fa fa-check-circle media-container__verificaion-icon"></span>
           </div>
           <div class="media-container__viewers">
+<<<<<<< HEAD
             <span class="media-container__viewers-number">15</span>
             <span class="media-container__viewers-txt">Views</span>
           </div>
@@ -34,6 +45,20 @@
         </div>
         <div class="row">
           <div class="media-container__description">{{videoDescription}}</div>
+=======
+            <span class="media-container__veiwers-number">15</span>
+            <span class="media-container__veiwers-txt">Views</span>
+          </div>
+          <div class="media-container__years">
+            <span class="media-container__veiwers-number">2</span>
+            <span class="media-container__veiwers-txt">years ago</span>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="media-container__description"
+          >hello its me ramy mamdouh and this is my first Vue app</div>
+>>>>>>> ftr-videoHolder
         </div>
         <div class="row">
           <div class="media-container__hint">[CCS]</div>
@@ -44,6 +69,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 // import myVideo from "vue-video";
 
 export default {
@@ -51,20 +77,29 @@ export default {
   components: {
     // myVideo
   },
+=======
+export default {
+  name: "VideoHolder",
+>>>>>>> ftr-videoHolder
   // async created () {
 
   // },
   data() {
     return {
+<<<<<<< HEAD
       LiveVideo: false,
       singleVideoId: "https://www.youtube.com/embed/" + this.videoId,
       singleVideoId2: "http://www.youtube.com/watch?v=" + this.videoId
+=======
+      LiveVideo: true
+>>>>>>> ftr-videoHolder
     };
   },
   props: {
     mediaType: {
       type: String,
       default: "video"
+<<<<<<< HEAD
     },
     videoTitle: {
       type: String,
@@ -77,6 +112,8 @@ export default {
     videoId: {
       type: String,
       default: ""
+=======
+>>>>>>> ftr-videoHolder
     }
   },
   methods: {}
