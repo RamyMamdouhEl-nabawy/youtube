@@ -1,0 +1,59 @@
+@import "../../../CommonStyles.scss";
+@import "../../../Colors.scss";
+
+.media-container {
+  &__video {
+  }
+
+  &__details-holder {
+    font-size: 1rem;
+    text-align: left;
+    color: $darkgrey;
+  }
+
+  &__live-icon {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.625rem 0 0;
+    align-self: center;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: #ff0000;
+  }
+
+  &__title {
+    color: #000;
+    font-size: 1.5rem;
+  }
+
+  &__validation-icon {
+    width: 0.625rem;
+    height: 0.625rem;
+    margin: 0 0.625rem 0 0;
+    align-self: center;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: #ff0000;
+  }
+
+  &__subtitle {
+  }
+
+  &__verificaion-icon {
+  }
+
+  &__viewers {
+  }
+
+  &__viewers-number {
+  }
+
+  &__viewers-txt {
+  }
+
+  &__description {
+  }
+
+  &__hint {
+  }
+}
