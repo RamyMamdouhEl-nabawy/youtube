@@ -1,7 +1,15 @@
 <template>
-  <div class="media-container container">
+  <div class="container media-container">
     <div class="row">
-      <div class="media-container__video col-6"></div>
+      <div class="media-container__video col-md-4 col-5">
+        <!-- <video src="https://youtu.be/iqmO1RlqorU" width="1499" height="568"></video> -->
+        <iframe
+          src="https://www.youtube.com/embed/iqmO1RlqorU"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
       <div class="media-container__details-holder col-6">
         <div class="row">
           <div class="media-container__live-icon" v-if="LiveVideo"></div>
@@ -18,8 +26,8 @@
             <span class="media-container__veiwers-txt">Views</span>
           </div>
           <div class="media-container__years">
-            <span class="media-container__veiwers-number">2</span>
-            <span class="media-container__veiwers-txt">years ago</span>
+            <span class="media-container__years-number">2</span>
+            <span class="media-container__years-txt">years ago</span>
           </div>
         </div>
         <div class="row">
@@ -43,7 +51,7 @@ export default {
   // },
   data() {
     return {
-      LiveVideo: true
+      LiveVideo: false
     };
   },
   props: {
