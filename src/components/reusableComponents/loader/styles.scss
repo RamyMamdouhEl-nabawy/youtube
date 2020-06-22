@@ -1,0 +1,27 @@
+@import "../../../CommonStyles.scss";
+@import "../../../Colors.scss";
+
+.loader-container {
+  justify-content: center;
+  color: $darkgrey;
+
+  &__text {
+    display: block;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &--sm {
+    font-size: 1rem;
+  }
+
+  &--md {
+    font-size: 1.25rem;
+  }
+
+  &--lg {
+    font-size: 2rem;
+  }
+}
