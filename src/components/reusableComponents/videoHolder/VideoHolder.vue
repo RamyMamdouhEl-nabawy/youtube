@@ -22,8 +22,8 @@
             <span class="fa fa-check-circle media-container__verificaion-icon"></span>
           </div>
           <div class="media-container__viewers">
-            <span class="media-container__veiwers-number">15</span>
-            <span class="media-container__veiwers-txt">Views</span>
+            <span class="media-container__viewers-number">15</span>
+            <span class="media-container__viewers-txt">Views</span>
           </div>
           <div class="media-container__years">
             <span class="media-container__years-number">2</span>
