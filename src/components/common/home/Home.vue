@@ -17,6 +17,7 @@
       </div>
       <div v-for="(videosList,index) in allVideos" :key="index">
         <VideoHolder
+          v-if="startSearch === true"
           :videoId="videosList.id.videoId"
           :videoDescription="videosList.snippet.description"
           :videoTitle="videosList.snippet.title"
@@ -57,10 +58,14 @@ export default {
       console.error(err);
     }
   },
+  updated() {
+    this.startSearch = true;
+  },
   data() {
     return {
       searchedVideos: [],
       allVideos: [],
+      startSearch: false,
       loaderDisplayToogle: false
     };
   },

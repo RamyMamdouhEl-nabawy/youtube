@@ -1,5 +1,16 @@
 # youtube
 
+
+### for getting project into your machine.
+
+1- Git clone repository from GitHub.
+
+2- For installing packages in application run [ npm i ].
+
+3- run [ npm run serve ]
+
+
+
 ## Project setup
 ```
 npm install
