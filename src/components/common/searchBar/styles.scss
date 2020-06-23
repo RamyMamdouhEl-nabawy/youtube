@@ -1,0 +1,89 @@
+@import "../../../CommonStyles.scss";
+@import "../../../Colors.scss";
+
+.header-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 1rem;
+  justify-content: center;
+  background-color: red;
+  z-index: 10;
+
+  &__logo {
+    display: inline-block;
+    width: 2.25rem;
+    height: auto;
+  }
+
+  &__title {
+    display: none;
+
+    @media screen and (min-width: 992px) {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  &__country {
+    display: none;
+    padding-left: 0.25rem;
+    vertical-align: top;
+    color: $darkgrey;
+    font-size: 10px;
+
+    @media screen and (min-width: 992px) {
+      display: inline-block;
+    }
+  }
+
+  &__search-box {
+    padding: 0;
+    border: 1px solid $greycolor;
+    background-color: #fff;
+
+    &--Visibility {
+      visibility: hidden;
+      @media screen and (min-width: 992px) {
+        visibility: initial;
+      }
+    }
+
+    &:focus {
+      border-color: blue;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      border: none;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+    }
+  }
+
+  &__search-icon {
+    color: #fff;
+    font-size: 1rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 992px) {
+      color: #999;
+      background-color: $greycolor;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    background-color: #fff;
+    position: initial;
+
+    .clear-search {
+      display: none;
+    }
+  }
+}
