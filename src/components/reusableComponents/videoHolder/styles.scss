@@ -73,6 +73,9 @@
 
   &__description {
     padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media screen and (min-width: 992px) {
       margin: 0.625rem 0;
     }
