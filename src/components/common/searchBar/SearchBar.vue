@@ -32,17 +32,8 @@ import axios from "axios";
 export default {
   searchBox: "",
   name: "SearchBar",
-  beforeMount() {
+  beforeUpdate() {
     this.$emit("loadingDisplay", this.loading);
-  },
-  components: {},
-  data() {
-    return {
-      searchBox: this.searchBox,
-      displaySearch: false,
-      loading: false,
-      videos: []
-    };
   },
   methods: {
     // Toggelig SearchBox in mobile screens.
@@ -73,15 +64,23 @@ export default {
         const result = await axios.get(baseURL);
         if (result.data.items) {
           this.videos = result.data.items;
-          this.loading = false;
           this.$emit("searchedVideos", result.data.items);
+          this.loading = false;
         }
+        this.$emit("loadingDisplay", this.loading);
       } catch (err) {
         console.error(err);
       }
-
-      this.$emit("loadingDisplay", this.loading);
     }
+  },
+  components: {},
+  data() {
+    return {
+      searchBox: this.searchBox,
+      displaySearch: false,
+      loading: false,
+      videos: []
+    };
   }
 };
 </script>
