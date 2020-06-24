@@ -2,12 +2,11 @@
   <div>
     <SearchBar v-on:searchedVideos="updateVideos($event)" />
     <div class="container">
-      <Loader
-        v-on:loadingDisplay="loaderDisplay($event)"
-        v-if="loaderDisplayToogle"
-        loadingText="Loading..."
-        size="lg"
-      />
+      <Video-Filter />
+      <div v-if="loaderDisplayToogle">
+        <Loader v-on:loadingDisplay="loaderDisplay($event)" loadingText="Loading" size="lg" />
+      </div>
+
       <div v-for="(searchVideo,index) in searchedVideos" :key="index">
         <VideoHolder
           :videoId="searchVideo.id.videoId"
@@ -15,9 +14,10 @@
           :videoTitle="searchVideo.snippet.title"
         />
       </div>
-      <div v-for="(videosList,index) in allVideos" :key="index">
+      <div v-for="(videosList,index) in allVideos" :key="`nx${index}`">
         <VideoHolder
-          :videoId="videosList.id.videoId"
+          v-if="searchedVideos.length === 0"
+          :videoId="videosList.id"
           :videoDescription="videosList.snippet.description"
           :videoTitle="videosList.snippet.title"
         />
@@ -31,6 +31,7 @@ import axios from "axios";
 import SearchBar from "../searchBar/SearchBar";
 import VideoHolder from "../../reusableComponents/videoHolder/VideoHolder";
 import Loader from "../../reusableComponents/loader/Loader";
+import Filter from "../../reusableComponents/filter/Filter";
 
 export default {
   name: "Home",
@@ -40,9 +41,11 @@ export default {
   components: {
     SearchBar,
     VideoHolder,
-    Loader
+    Loader,
+    "Video-Filter": Filter
   },
   async created() {
+    this.loaderDisplayToogle = true;
     const key = "AIzaSyCRVjARE3jcSUIFn9j_SWblCsDOOrnFU8w";
     const baseURL =
       "https://www.googleapis.com/youtube/v3/videos?part=snippet&key=" +
@@ -52,6 +55,7 @@ export default {
       const result = await axios.get(baseURL);
       if (result.data.items) {
         this.allVideos = result.data.items;
+        this.loaderDisplayToogle = false;
       }
     } catch (err) {
       console.error(err);
@@ -68,9 +72,10 @@ export default {
     updateVideos: function(updatedVideos) {
       this.searchedVideos = updatedVideos;
     },
-    loaderDisplay: function(display) {
-      console.log(display);
-      this.loaderDisplayToogle = display;
+    // for toggling display of loader component.
+    loaderDisplay: function(displayLoader) {
+      console.log(displayLoader);
+      this.loaderDisplayToogle = displayLoader;
     }
   }
 };
