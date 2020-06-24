@@ -1,0 +1,17 @@
+@import "../../../CommonStyles.scss";
+@import "../../../Colors.scss";
+
+button,
+.btn,
+.btn-secondary {
+  text-align: left;
+  background-color: #eee;
+  border: 1px solid #bbb;
+  color: initial;
+  width: 6.5rem;
+}
+
+// .fiter-container {
+//     &__DDL {
+//     }
+// }
