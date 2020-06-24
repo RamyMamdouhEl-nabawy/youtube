@@ -7,8 +7,6 @@
 
     <div class="utube-body">
       <Home />
-      <!--<Loader loadingText="Loading..." size="md"/>
-      <img alt="Vue logo" src="./assets/logo.png" />-->
     </div>
   </div>
 </template>
@@ -20,7 +18,6 @@ export default {
   name: "App",
   components: {
     Home
-    // HelloWorld,
   }
 };
 </script>
@@ -45,6 +42,5 @@ export default {
   @media screen and (min-width: 992px) {
     background-color: $page-background;
   }
-  /* margin-top: 60px; */
 }
 </style>
