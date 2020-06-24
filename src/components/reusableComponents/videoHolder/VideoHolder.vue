@@ -68,8 +68,8 @@ export default {
   data() {
     return {
       LiveVideo: false,
-      singleVideoId: "https://www.youtube.com/embed/" + this.videoId,
-      singleVideoId2: "http://www.youtube.com/watch?v=" + this.videoId
+      singleVideoId: `https://www.youtube.com/embed/${this.videoId}`
+      // singleVideoId2: "http://www.youtube.com/watch?v=" + this.videoId
     };
   },
   props: {
