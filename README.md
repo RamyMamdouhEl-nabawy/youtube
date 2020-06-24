@@ -1,27 +1,5 @@
 # youtube
 
-<<<<<<< HEAD
-
-### for getting project into your machine.
-
-1- Git clone repository from GitHub.
-
-2- For installing packages in application run [ npm i ].
-
-3- run [ npm run serve ]
-
-
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-=======
 ### Getting project into your machine.
 
 # 1- Create a folder in your machine for holding application:
@@ -48,8 +26,6 @@ npm run serve
 - Local:   http://localhost:8080/
 - Network: http://192.168.1.6:8080/
 
-
->>>>>>> 1844946cc97736d9db4234e06190ead64754c650
 
 ### Compiles and minifies for production
 ```
