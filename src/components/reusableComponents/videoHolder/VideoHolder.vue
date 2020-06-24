@@ -24,10 +24,6 @@
             <span class="fa fa-check-circle media-container__verificaion-icon"></span>
           </div>
           <div class="media-container__viewers">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> updating class viewers.
             <span class="media-container__viewers-number">15</span>
             <span class="media-container__viewers-txt">Views</span>
           </div>
@@ -38,31 +34,27 @@
         </div>
         <div class="row">
           <div class="media-container__description">{{videoDescription}}</div>
-=======
-            <span class="media-container__veiwers-number">15</span>
-            <span class="media-container__veiwers-txt">Views</span>
-          </div>
-          <div class="media-container__years">
-            <span class="media-container__veiwers-number">2</span>
-            <span class="media-container__veiwers-txt">years ago</span>
-          </div>
+          <span class="media-container__veiwers-number">15</span>
+          <span class="media-container__veiwers-txt">Views</span>
         </div>
-        <div class="row">
-          <div
-            class="media-container__description"
-          >hello its me ramy mamdouh and this is my first Vue app</div>
->>>>>>> ftr-videoHolder
+        <div class="media-container__years">
+          <span class="media-container__veiwers-number">2</span>
+          <span class="media-container__veiwers-txt">years ago</span>
         </div>
-        <div class="row">
-          <div class="media-container__hint">[CCS]</div>
-        </div>
+      </div>
+      <div class="row">
+        <div
+          class="media-container__description"
+        >hello its me ramy mamdouh and this is my first Vue app</div>
+      </div>
+      <div class="row">
+        <div class="media-container__hint">[CCS]</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
 // import myVideo from "vue-video";
 
 export default {
@@ -70,29 +62,20 @@ export default {
   components: {
     // myVideo
   },
-=======
-export default {
-  name: "VideoHolder",
->>>>>>> ftr-videoHolder
   // async created () {
 
   // },
   data() {
     return {
-<<<<<<< HEAD
       LiveVideo: false,
       singleVideoId: "https://www.youtube.com/embed/" + this.videoId,
       singleVideoId2: "http://www.youtube.com/watch?v=" + this.videoId
-=======
-      LiveVideo: true
->>>>>>> ftr-videoHolder
     };
   },
   props: {
     mediaType: {
       type: String,
       default: "video"
-<<<<<<< HEAD
     },
     videoTitle: {
       type: String,
@@ -105,8 +88,6 @@ export default {
     videoId: {
       type: String,
       default: ""
-=======
->>>>>>> ftr-videoHolder
     }
   },
   methods: {}
