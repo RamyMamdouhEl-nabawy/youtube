@@ -85,7 +85,6 @@ export default {
     },
     // for toggling display of loader component.
     loaderDisplay: function(displayLoader) {
-      console.log(displayLoader);
       this.loaderDisplayToogle = displayLoader;
     }
   }
