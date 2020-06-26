@@ -1,26 +1,33 @@
 <template>
   <div>
-    <SearchBar v-on:searchedVideos="updateVideos($event)" />
+    <SearchBar
+      v-on:searchedVideos="updateVideos($event)"
+      v-on:loadingDisplay="loaderDisplay($event)"
+    />
     <div class="container">
       <Video-Filter />
       <div v-if="loaderDisplayToogle">
-        <Loader v-on:loadingDisplay="loaderDisplay($event)" loadingText="Loading" size="lg" />
+        <Loader loadingText="Loading" size="lg" />
       </div>
 
-      <div v-for="(searchVideo,index) in searchedVideos" :key="index">
-        <VideoHolder
-          :videoId="searchVideo.id.videoId"
-          :videoDescription="searchVideo.snippet.description"
-          :videoTitle="searchVideo.snippet.title"
-        />
-      </div>
-      <div v-for="(videosList,index) in allVideos" :key="`nx${index}`">
-        <VideoHolder
-          v-if="searchedVideos.length === 0"
-          :videoId="videosList.id"
-          :videoDescription="videosList.snippet.description"
-          :videoTitle="videosList.snippet.title"
-        />
+      <div v-if="loaderDisplayToogle === false">
+        <div v-for="(searchVideo,index) in searchedVideos" :key="index">
+          <VideoHolder
+            :videoId="searchVideo.id.videoId"
+            :videoDescription="searchVideo.snippet.description"
+            :videoTitle="searchVideo.snippet.title"
+            :videoSubTitle="searchVideo.snippet.channelTitle"
+          />
+        </div>
+        <div v-for="(videosList,index) in allVideos" :key="`nx${index}`">
+          <VideoHolder
+            v-if="searchedVideos.length === 0"
+            :videoId="videosList.id"
+            :videoDescription="videosList.snippet.description"
+            :videoTitle="videosList.snippet.title"
+            :videoSubTitle="videosList.snippet.channelTitle"
+          />
+        </div>
       </div>
     </div>
   </div>
