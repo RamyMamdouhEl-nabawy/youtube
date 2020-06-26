@@ -36,19 +36,19 @@
           <div class="media-container__description">{{videoDescription}}</div>
           <span class="media-container__veiwers-number">15</span>
           <span class="media-container__veiwers-txt">Views</span>
+          <div class="media-container__years">
+            <span class="media-container__veiwers-number">2</span>
+            <span class="media-container__veiwers-txt">years ago</span>
+          </div>
         </div>
-        <div class="media-container__years">
-          <span class="media-container__veiwers-number">2</span>
-          <span class="media-container__veiwers-txt">years ago</span>
+        <div class="row">
+          <div
+            class="media-container__description"
+          >hello its me ramy mamdouh and this is my first Vue app</div>
         </div>
-      </div>
-      <div class="row">
-        <div
-          class="media-container__description"
-        >hello its me ramy mamdouh and this is my first Vue app</div>
-      </div>
-      <div class="row">
-        <div class="media-container__hint">[CCS]</div>
+        <div class="row">
+          <div class="media-container__hint">[CCS]</div>
+        </div>
       </div>
     </div>
   </div>
