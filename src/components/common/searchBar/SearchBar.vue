@@ -32,9 +32,6 @@ import axios from "axios";
 export default {
   searchBox: "",
   name: "SearchBar",
-  beforeUpdate() {
-    this.$emit("loadingDisplay", this.loading);
-  },
   methods: {
     // Toggelig SearchBox in mobile screens.
     DisplaySeachBox() {
@@ -60,6 +57,8 @@ export default {
         "&key=" +
         key;
       this.loading = true;
+      this.$emit("loadingDisplay", this.loading);
+
       try {
         const result = await axios.get(baseURL);
         if (result.data.items) {
@@ -67,10 +66,10 @@ export default {
           this.$emit("searchedVideos", result.data.items);
           this.loading = false;
         }
-        this.$emit("loadingDisplay", this.loading);
       } catch (err) {
         console.error(err);
       }
+      this.$emit("loadingDisplay", this.loading);
     }
   },
   components: {},
