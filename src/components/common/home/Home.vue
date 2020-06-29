@@ -5,13 +5,16 @@
       v-on:loadingDisplay="loaderDisplay($event)"
     />
     <div class="container">
-      <Video-Filter />
+      <Video-Filter
+        v-on:chosenType="ddlChosenType($event)"
+        v-on:chosenDate="ddlChosenDate($event)"
+      />
       <div v-if="loaderDisplayToogle">
         <Loader loadingText="Loading" size="lg" />
       </div>
 
       <div v-if="loaderDisplayToogle === false">
-        <div v-for="(searchVideo,index) in searchedVideos" :key="index">
+        <div v-for="(searchVideo,index) in allVideos" :key="index">
           <VideoHolder
             :videoId="searchVideo.id.videoId"
             :videoDescription="searchVideo.snippet.description"
@@ -21,7 +24,7 @@
         </div>
         <div v-for="(videosList,index) in allVideos" :key="`nx${index}`">
           <VideoHolder
-            v-if="searchedVideos.length === 0"
+            v-if="allVideos.length === 0"
             :videoId="videosList.id"
             :videoDescription="videosList.snippet.description"
             :videoTitle="videosList.snippet.title"
@@ -38,7 +41,9 @@ import axios from "axios";
 import SearchBar from "../searchBar/SearchBar";
 import VideoHolder from "../../reusableComponents/videoHolder/VideoHolder";
 import Loader from "../../reusableComponents/loader/Loader";
-import Filter from "../../reusableComponents/filter/Filter";
+import filter from "../../reusableComponents/filter/Filter";
+
+const key = "AIzaSyCRVjARE3jcSUIFn9j_SWblCsDOOrnFU8w";
 
 export default {
   name: "Home",
@@ -49,11 +54,10 @@ export default {
     SearchBar,
     VideoHolder,
     Loader,
-    "Video-Filter": Filter
+    "Video-Filter": filter
   },
   async created() {
     this.loaderDisplayToogle = true;
-    const key = "AIzaSyCRVjARE3jcSUIFn9j_SWblCsDOOrnFU8w";
     const baseURL =
       "https://www.googleapis.com/youtube/v3/videos?part=snippet&key=" +
       key +
@@ -73,7 +77,7 @@ export default {
   },
   data() {
     return {
-      searchedVideos: [],
+      // searchedVideos: [],
       allVideos: [],
       startSearch: false,
       loaderDisplayToogle: false
@@ -81,11 +85,22 @@ export default {
   },
   methods: {
     updateVideos: function(updatedVideos) {
-      this.searchedVideos = updatedVideos;
+      this.allVideos = updatedVideos;
+      // console.log(this.allVideos);
     },
     // for toggling display of loader component.
     loaderDisplay: function(displayLoader) {
       this.loaderDisplayToogle = displayLoader;
+    },
+    ddlChosenType: async function(type) {
+      var selectedVideoType = this.allVideos.filter(function(vid) {
+        console.log(vid.kind);
+        return vid.kind === `youtube#${type}`;
+      });
+      console.log(selectedVideoType);
+    },
+    ddlChosenDate: function(date) {
+      console.log(date);
     }
   }
 };
