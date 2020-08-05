@@ -1,0 +1,33 @@
+<div class="header-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-2">
+        <img
+          src="../../../assets/youtube-logo-png.jpg"
+          class="header-container__logo"
+        />
+        <div class="header-container__title">YouTube</div>
+        <span class="header-container__country">EG</span>
+      </div>
+      <div class="col-md-7 col-10">
+        <div class="row">
+          <div
+            class="header-container__search-box col-10"
+            v-bind:class="[displaySearch ? '' : 'header-container__search-box--Visibility']"
+          >
+            <input
+              type="text"
+              class
+              v-model="searchBox"
+              @keyup.enter="getVideos"
+            />
+            <span class="fa fa-times clear-search" v-on:click="clearSearch" />
+          </div>
+          <div class="header-container__search-icon col-2" @click="getVideos">
+            <i class="fa fa-search" v-on:click="DisplaySeachBox"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
