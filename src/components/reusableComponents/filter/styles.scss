@@ -1,15 +1,16 @@
 @import "../../../CommonStyles.scss";
 @import "../../../Colors.scss";
 
-.fiter-container {
+.filter-container {
   &__DDL,
   select {
-    width: 6.5rem;
+    min-width: 6.5rem;
+    width: max-content;
     text-align: left;
-    background-color: #eee;
     border: 1px solid #bbb;
     border-radius: 3px;
-    margin: 0 0.625rem;
+    margin: 0.625rem;
   }
 }
-//  &__DDL,
+
+// background-color: #eee;
