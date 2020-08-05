@@ -1,17 +1,16 @@
 @import "../../../CommonStyles.scss";
 @import "../../../Colors.scss";
 
-button,
-.btn,
-.btn-secondary {
-  text-align: left;
-  background-color: #eee;
-  border: 1px solid #bbb;
-  color: initial;
-  width: 6.5rem;
+.filter-container {
+  &__DDL,
+  select {
+    min-width: 6.5rem;
+    width: max-content;
+    text-align: left;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    margin: 0.625rem;
+  }
 }
 
-// .fiter-container {
-//     &__DDL {
-//     }
-// }
+// background-color: #eee;
