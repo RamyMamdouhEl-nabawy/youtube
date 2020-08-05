@@ -16,7 +16,7 @@
               <input type="text" class v-model="searchBox" @keyup.enter="getVideos" />
               <span class="fa fa-times clear-search" v-on:click="clearSearch" />
             </div>
-            <div class="header-container__search-icon col-2">
+            <div class="header-container__search-icon col-2" @click="getVideos">
               <i class="fa fa-search" v-on:click="DisplaySeachBox"></i>
             </div>
           </div>
