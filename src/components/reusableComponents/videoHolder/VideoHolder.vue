@@ -20,7 +20,7 @@
         <div class="row">
           <div class="media-container__validation-icon" v-if="LiveVideo"></div>
           <div class="media-container__subtitle">
-            R.M
+            {{videoSubTitle}}
             <span class="fa fa-check-circle media-container__verificaion-icon"></span>
           </div>
           <div class="media-container__viewers">
@@ -67,6 +67,10 @@ export default {
       default: "video"
     },
     videoTitle: {
+      type: String,
+      default: ""
+    },
+    videoSubTitle: {
       type: String,
       default: ""
     },

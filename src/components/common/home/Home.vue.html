@@ -1,0 +1,42 @@
+<div>
+  <SearchBar
+    v-on:searchedVideos="updateVideos($event)"
+    v-on:loadingDisplay="loaderDisplay($event)"
+  />
+  <div class="container">
+    <Video-Filter
+      v-on:chosenType="ddlChosenType($event)"
+      v-on:chosenDate="ddlChosenDate($event)"
+    />
+    <div v-if="loaderDisplayToogle">
+      <Loader loadingText="Loading" size="lg" />
+    </div>
+
+    <div v-if="loaderDisplayToogle === false">
+      <div
+        v-for="(videosList,index) in allVideos"
+        :key="`nx${index}`"
+        v-if="filteredVideos.length === 0"
+      >
+        <VideoHolder
+          :videoId="videosList.id"
+          :videoDescription="videosList.snippet.description"
+          :videoTitle="videosList.snippet.title"
+          :videoSubTitle="videosList.snippet.channelTitle"
+        />
+      </div>
+      <div
+        v-for="(searchVideo,index) in filteredVideos"
+        :key="index"
+        v-if="filteredVideos.length > 0"
+      >
+        <VideoHolder
+          :videoId="searchVideo.id.videoId"
+          :videoDescription="searchVideo.snippet.description"
+          :videoTitle="searchVideo.snippet.title"
+          :videoSubTitle="searchVideo.snippet.channelTitle"
+        />
+      </div>
+    </div>
+  </div>
+</div>
