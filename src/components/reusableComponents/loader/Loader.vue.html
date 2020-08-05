@@ -1,0 +1,9 @@
+<div class="loader-container" v-bind:class=" 'loader-container--' + size">
+  <div class="loader-container__icon fa fa-spinner fa-spin" role="status"></div>
+  <div
+    class="loader-conatiner__text"
+    v-bind:class="loadingText.length > 0 ?  '' : 'loader-container__text--hidden'"
+  >
+    {{loadingText}}
+  </div>
+</div>
