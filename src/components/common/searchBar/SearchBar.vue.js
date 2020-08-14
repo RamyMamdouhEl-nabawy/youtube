@@ -48,7 +48,7 @@ export default {
       } catch (err) {
         console.error(err);
       }
-      // this.$emit("loadingDisplay", this.loading);
+      this.$emit("loadingDisplay", this.loading);
     },
   },
 };
