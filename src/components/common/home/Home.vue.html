@@ -25,13 +25,15 @@
           :videoSubTitle="videosList.snippet.channelTitle"
         />
       </div>
-      <div
-        v-for="(searchVideo,index) in filteredVideos"
-        :key="index"
-        v-if="filteredVideos.length > 0"
-      >
+      <div v-for="(searchVideo,index) in filteredVideos" :key="index">
         <VideoHolder
-          :videoId="searchVideo.id.videoId"
+          :videoId="searchVideo.id.videoId
+          ? searchVideo.id.videoId
+          : searchVideo.id.channelId
+          ? searchVideo.id.channelId
+          : searchVideo.id.playlistId
+          ? searchVideo.id.playlistId
+          : searchVideo.id "
           :videoDescription="searchVideo.snippet.description"
           :videoTitle="searchVideo.snippet.title"
           :videoSubTitle="searchVideo.snippet.channelTitle"

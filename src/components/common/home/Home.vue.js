@@ -46,17 +46,18 @@ export default {
   methods: {
     updateVideos: function(updatedVideos) {
       this.allVideos = updatedVideos;
+      this.filteredVideos = updatedVideos;
     },
     // for toggling display of loader component.
     loaderDisplay: function(displayLoader) {
       this.loaderDisplayToogle = displayLoader;
     },
     ddlChosenType: function(type) {
-      this.filteredVideos = this.allVideos;
-      const selectedVideoType = this.allVideos.filter(function(vidKind) {
-        return vidKind.id.kind === `youtube#${type}`;
-      });
-      this.filteredVideos = selectedVideoType.sort();
+      if (type === "") return this.filteredVideos = this.allVideos;
+      else {
+        const selectedVideoType = this.allVideos.filter( vidKind => vidKind.id.kind === `youtube#${type}` );
+				selectedVideoType.length !== 0 ? this.filteredVideos = selectedVideoType.sort() : this.filteredVideos = this.allVideos;
+      }
     },
     ddlChosenDate: function(date) {
       console.log(date);
