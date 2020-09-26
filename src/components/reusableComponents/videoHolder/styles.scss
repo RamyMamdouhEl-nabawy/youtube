@@ -12,6 +12,13 @@
       border-radius: 25px;
       box-shadow: 0.3rem 0.3rem mintcream;
     }
+
+    &:hover {
+      width: 100vh;
+      height: 100vh;
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
   }
 
   &__details-holder {
