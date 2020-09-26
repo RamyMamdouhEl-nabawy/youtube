@@ -13,9 +13,9 @@
       box-shadow: 0.3rem 0.3rem mintcream;
     }
 
-    &:hover {
+    &:hover, &:active {
       width: 100vh;
-      height: 100vh;
+      height: 80vh;
       max-width: 100%;
       flex: 0 0 100%;
     }

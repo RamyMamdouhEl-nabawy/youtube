@@ -1,7 +1,7 @@
 <template>
   <div class="container media-container">
     <div class="row">
-      <div class="media-container__video col-md-4 col-6">
+      <div class="media-container__video col-md-4 col-6" @mouseover="mouseOverVideo">
         <iframe
           :src="singleVideoId"
           frameborder="0"
@@ -83,7 +83,11 @@ export default {
       default: ""
     }
   },
-  methods: {}
+  methods: {
+    mouseOverVideo: function(e) {
+      e.target.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
 };
 </script>
 
