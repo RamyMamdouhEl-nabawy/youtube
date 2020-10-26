@@ -1,9 +1,13 @@
-<div>
+<div v-bind:class="[darkTheme == true ? 'dark-theme' : '']">
   <SearchBar
     v-on:searchedVideos="updateVideos($event)"
     v-on:loadingDisplay="loaderDisplay($event)"
   />
   <div class="container">
+    <b-form-checkbox class="dark-theme-toogle" switch @change="toogle"
+      >Dark Theme
+    </b-form-checkbox>
+    
     <Video-Filter
       v-on:chosenType="ddlChosenType($event)"
       v-on:chosenDate="ddlChosenDate($event)"

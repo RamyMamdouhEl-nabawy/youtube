@@ -4,7 +4,6 @@
       <router-link to="/">Home</router-link>
       <router-view />
     </nav>-->
-
     <div class="utube-body">
       <Home />
     </div>
@@ -13,7 +12,6 @@
 
 <script>
 import Home from "./components/common/home/Home";
-
 export default {
   name: "App",
   components: {

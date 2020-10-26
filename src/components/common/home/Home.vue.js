@@ -37,6 +37,7 @@ export default {
   },
   data() {
     return {
+      darkTheme: false,
       allVideos: [],
       startSearch: false,
       loaderDisplayToogle: false,
@@ -44,6 +45,10 @@ export default {
     };
   },
   methods: {
+    toogle: function() {
+      if (this.darkTheme == false) this.darkTheme = true;
+      else this.darkTheme = false;
+    },
     updateVideos: function(updatedVideos) {
       this.allVideos = updatedVideos;
       this.filteredVideos = updatedVideos;
@@ -53,10 +58,14 @@ export default {
       this.loaderDisplayToogle = displayLoader;
     },
     ddlChosenType: function(type) {
-      if (type === "") return this.filteredVideos = this.allVideos;
+      if (type === "") return (this.filteredVideos = this.allVideos);
       else {
-        const selectedVideoType = this.allVideos.filter( vidKind => vidKind.id.kind === `youtube#${type}` );
-				selectedVideoType.length !== 0 ? this.filteredVideos = selectedVideoType.sort() : this.filteredVideos = this.allVideos;
+        const selectedVideoType = this.allVideos.filter(
+          (vidKind) => vidKind.id.kind === `youtube#${type}`
+        );
+        selectedVideoType.length !== 0
+          ? (this.filteredVideos = selectedVideoType.sort())
+          : (this.filteredVideos = this.allVideos);
       }
     },
     ddlChosenDate: function(date) {

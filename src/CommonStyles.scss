@@ -1,7 +1,28 @@
-
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "bootstrap";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/solid"; // fas
 @import "~@fortawesome/fontawesome-free/scss/regular"; // far
 @import "~@fortawesome/fontawesome-free/scss/brands"; // fab
+
+.dark-theme {
+  background-color: #1d1d1d;
+
+  .dark-theme-toogle {
+    color: white;
+    // margin: 0.625rem 0;
+  }
+
+  .custom-control-input:checked~.custom-control-label::before{
+    border-color: #f00;
+    background-color: #f00;
+  }
+
+  .header-container {
+    background-color: #1d1d1d;
+  }
+
+  .media-container__title {
+    color: #fff;
+  }
+}
