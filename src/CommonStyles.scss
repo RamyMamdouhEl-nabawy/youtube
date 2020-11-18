@@ -13,9 +13,9 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
     // margin: 0.625rem 0;
   }
 
-  .custom-control-input:checked~.custom-control-label::before{
-    border-color: #f00;
-    background-color: #f00;
+  .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: #8a0000;
+    background-color: #8a0000;
   }
 
   .header-container {

@@ -1,22 +1,15 @@
 @import "../../../CommonStyles.scss";
 @import "../../../Colors.scss";
-.dark-theme {
-  .header-container {
-    &__title {
-      color: #FF0000;
-    }
-  }
-}
-
 .header-container {
   position: fixed;
-  top: 0;
+  top: 25px;
   right: 0;
   left: 0;
-  padding: 1.25rem 1rem;
+  padding: 1rem;
   justify-content: center;
   background-color: red;
   z-index: 10;
+  order: 2;
 
   &__logo {
     display: inline-block;
@@ -25,14 +18,20 @@
   }
 
   &__title {
-    display: none;
+    // display: none;
     color: #2c3e50;
 
     @media screen and (min-width: 992px) {
       display: inline-block;
-      font-size: 16px;
+      // font-size: 16px;
+      font-size: 30px;
       font-weight: bold;
     }
+  }
+
+  &__title-r {
+    display: inline-block;
+    color: #8a0000;
   }
 
   &__country {

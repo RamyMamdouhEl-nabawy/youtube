@@ -2,6 +2,12 @@
 @import "../../../Colors.scss";
 
 .filter-container {
+  margin-top: 5.25rem;
+
+  @media screen and (min-width: 992px) {
+    margin-top: 0;
+  }
+
   &__DDL,
   select {
     min-width: 6.5rem;

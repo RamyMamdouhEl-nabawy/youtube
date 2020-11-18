@@ -1,3 +1,29 @@
 h1 {
   color: purple;
 }
+
+.header-holder {
+  background-color: red;
+
+  @media screen and (min-width: 992px) {
+    background-color: #fff;
+  }
+  .dark-theme-toogle {
+    position: fixed;
+    top: 0;
+    order: 1;
+    padding: 2px 2rem;
+    z-index: 10;
+    background-color: inherit;
+    @media screen and (min-width: 992px) {
+      position: initial;
+      padding: 0;
+    }
+  }
+}
+
+.dark-theme {
+  .header-holder {
+    background-color: #1d1d1d;
+  }
+}

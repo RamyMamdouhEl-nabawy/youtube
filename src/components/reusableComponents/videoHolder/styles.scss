@@ -13,7 +13,8 @@
       box-shadow: 0.3rem 0.3rem mintcream;
     }
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
       width: 100vh;
       height: 80vh;
       max-width: 100%;
@@ -25,6 +26,7 @@
     font-size: 0.75rem;
     text-align: left;
     color: $darkgrey;
+    margin: 0.875rem;
   }
 
   &__live-icon {
