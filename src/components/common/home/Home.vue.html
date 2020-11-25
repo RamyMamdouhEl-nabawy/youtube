@@ -33,6 +33,7 @@
           :videoDescription="videosList.snippet.description"
           :videoTitle="videosList.snippet.title"
           :videoSubTitle="videosList.snippet.channelTitle"
+          :videoDate="videosList.snippet.publishedAt"
         />
       </div>
       <div v-for="(searchVideo,index) in filteredVideos" :key="index">
@@ -47,6 +48,7 @@
           :videoDescription="searchVideo.snippet.description"
           :videoTitle="searchVideo.snippet.title"
           :videoSubTitle="searchVideo.snippet.channelTitle"
+          :videoDate="searchVideo.snippet.publishedAt"
         />
       </div>
     </div>
