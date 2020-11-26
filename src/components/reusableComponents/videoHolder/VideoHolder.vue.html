@@ -1,0 +1,51 @@
+<div class="container media-container">
+  <div class="row">
+    <div
+      class="media-container__video col-md-4 col-6"
+      @mouseover="mouseOverVideo"
+    >
+      <iframe
+        :src="singleVideoId"
+        frameborder="0"
+        allow="accelerometer; autoplay; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <!-- <object :data="singleVideoId" width="100%" height="100%"></object> -->
+      <!-- <video controls :src="'http://www.youtube.com/watch?v='+ videoId" type="video/youtube">
+        </video>-->
+    </div>
+    <div class="media-container__details-holder col-md-6 col-5">
+      <div class="row">
+        <div class="media-container__live-icon" v-if="LiveVideo"></div>
+        <div class="media-container__title">{{ videoTitle }}</div>
+      </div>
+      <div class="row">
+        <div class="media-container__validation-icon" v-if="LiveVideo"></div>
+        <div class="media-container__subtitle">
+          {{ videoSubTitle }}
+          <span
+            class="fa fa-check-circle media-container__verificaion-icon"
+          ></span>
+        </div>
+        <div class="media-container__viewers">
+          <span class="media-container__viewers-number">15</span>
+          <span class="media-container__viewers-txt">Views</span>
+        </div>
+        <div class="media-container__years">
+          <span class="media-container__years-number">
+            {{ videoPublishedYear }}
+          </span>
+          <span class="media-container__years-txt">
+            {{ yearsAgo }}
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="media-container__description">{{ videoDescription }}</div>
+      </div>
+      <div class="row">
+        <div class="media-container__hint">[CCS]</div>
+      </div>
+    </div>
+  </div>
+</div>
