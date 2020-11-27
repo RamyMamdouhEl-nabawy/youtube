@@ -65,10 +65,10 @@ export default {
       const videoPublishedDay = this.videoDate.substring(8, 10);
       //calculating date from video publish date till current date.
       let videoYear = currentDate.getFullYear() - videoPublishYear;
-      let videoMonth = monthNames[videoPublishedMonth + 1];
+      let videoMonth = monthNames[Number(videoPublishedMonth) - 1];
       let videoDay = currentDate.getDate() - videoPublishedDay;
       //check whether date is at current year to display month and if its at current month it will calculate from publish day till current day.
-      var lessThanYear =
+      let lessThanYear =
         currentDate.getMonth() + 1 == videoPublishedMonth
           ? `${videoDay} Days ago`
           : videoMonth;
