@@ -48,6 +48,8 @@
 
   &__search-box {
     padding: 0;
+    margin: 0 0.625rem;
+    border-radius: 15px;
     border: 1px solid $greycolor;
     background-color: #fff;
 
@@ -65,6 +67,7 @@
     input[type="text"] {
       width: 90%;
       border: none;
+      border-radius: 10px;
     }
 
     input[type="text"]:focus {
@@ -73,11 +76,12 @@
   }
 
   &__search-icon {
+    display: flex;
     color: #fff;
     font-size: 1rem;
-    justify-content: center;
-    display: flex;
     align-items: center;
+    justify-content: center;
+    border-radius: 15px;
     cursor: pointer;
 
     @media screen and (min-width: 992px) {
