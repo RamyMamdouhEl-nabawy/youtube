@@ -25,7 +25,9 @@
   &__details-holder {
     font-size: 0.75rem;
     text-align: left;
-    color: $darkgrey;
+    // color: $darkgrey;
+    // color: rgb(134, 131, 131);
+    color: inherit;
     margin: 0.875rem;
   }
 
@@ -40,8 +42,9 @@
   }
 
   &__title {
-    color: #000;
+    color: #2c3e50;
     font-size: 1rem;
+    font-weight: bold;
   }
 
   &__validation-icon {

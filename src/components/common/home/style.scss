@@ -1,3 +1,6 @@
+@import "../../../CommonStyles.scss";
+@import "../../../Colors.scss";
+
 h1 {
   color: purple;
 }
@@ -8,6 +11,36 @@ h1 {
   @media screen and (min-width: 992px) {
     background-color: #fff;
   }
+
+  .user-mode {
+    text-align: right;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    z-index: 11;
+
+    &__icon {
+      // color: #2c3e50;
+      font-size: 25px;
+      margin: 0.5rem;
+    }
+
+    &__content-holder {
+      position: relative;
+      top: 0;
+      right: 0;
+      padding: 0.625rem;
+      border-radius: 10px;
+      background: linear-gradient(0deg, lightgrey, transparent);
+    }
+
+    &__theme-color,
+    &__color-style {
+      color: #8a0000;
+      font-size: 12px;
+    }
+  }
+
   .dark-theme-toogle {
     position: fixed;
     top: 0;

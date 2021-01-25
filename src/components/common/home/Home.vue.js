@@ -42,6 +42,11 @@ export default {
       startSearch: false,
       loaderDisplayToogle: false,
       filteredVideos: [],
+      customMode: {
+        backgroundColor: "",
+        color: "",
+      },
+      dispayUserMenu: false,
     };
   },
   methods: {
@@ -70,6 +75,11 @@ export default {
     },
     ddlChosenDate: function(date) {
       console.log(date);
+    },
+    dispayingUserMenu: function() {
+      this.dispayUserMenu == false
+        ? (this.dispayUserMenu = true)
+        : (this.dispayUserMenu = false);
     },
   },
 };

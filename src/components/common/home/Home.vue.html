@@ -1,5 +1,29 @@
-<div v-bind:class="[darkTheme == true ? 'dark-theme' : '']">
-  <div class="header-holder">
+<div v-bind:class="[darkTheme == true ? 'dark-theme' : '']" :style="customMode">
+  <div class="header-holder" :style="customMode">
+    <section class="user-mode">
+      <i
+        class="user-mode__icon fa fa-users-cog"
+        v-on:click="dispayingUserMenu()"
+      ></i>
+      <div class="user-mode__content-holder" v-if="dispayUserMenu">
+        <div class="user-mode__theme-color">
+          <span>Theme Color</span>
+          <input
+            type="color"
+            class="px-1"
+            v-on:input="customMode.backgroundColor = $event.target.value"
+          />
+        </div>
+        <div class="user-mode__color-style">
+          <span>Text Color Style</span>
+          <input
+            type="color"
+            class="px-1"
+            v-on:input="customMode.color = $event.target.value"
+          />
+        </div>
+      </div>
+    </section>
     <b-form-checkbox
       class="col-lg-9 col-12 text-right dark-theme-toogle"
       switch

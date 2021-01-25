@@ -13,14 +13,20 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
     // margin: 0.625rem 0;
   }
 
+  .user-mode {
+    &__icon {
+      color: #fff;
+    }
+  }
+
   .custom-control-input:checked ~ .custom-control-label::before {
     border-color: #8a0000;
     background-color: #8a0000;
   }
 
-  .header-container {
-    background-color: #1d1d1d;
-  }
+  // .header-container {
+  // background-color: #1d1d1d;
+  // }
 
   .media-container__title {
     color: #fff;

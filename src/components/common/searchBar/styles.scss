@@ -7,7 +7,7 @@
   left: 0;
   padding: 1rem;
   justify-content: center;
-  background-color: red;
+  background-color: inherit;
   z-index: 10;
   order: 2;
 
@@ -91,7 +91,7 @@
   }
 
   @media screen and (min-width: 992px) {
-    background-color: #fff;
+    // background-color: #fff;
     position: initial;
 
     .clear-search {
