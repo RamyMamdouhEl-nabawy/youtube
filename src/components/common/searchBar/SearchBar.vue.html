@@ -20,11 +20,15 @@
             <input
               type="text"
               class
+              autocomplete="on"
               v-model="searchBox"
               @keyup.enter="getVideos"
               placeholder="Search"
             />
-            <span class="fa fa-times clear-search" v-on:click="clearSearch" />
+            <span
+              class="fa fa-times clear-search"
+              v-on:click="clearSearch"
+            ></span>
           </div>
           <div class="header-container__search-icon col-2">
             <i class="fa fa-search" v-on:click="DisplaySeachBox"></i>
