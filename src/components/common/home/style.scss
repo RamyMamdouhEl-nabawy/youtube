@@ -1,34 +1,26 @@
 @import "../../../CommonStyles.scss";
 @import "../../../Colors.scss";
 
-h1 {
-  color: purple;
-}
-
 .header-holder {
   background-color: red;
 
-  @media screen and (min-width: 992px) {
-    background-color: #fff;
-  }
-
   .user-mode {
     text-align: right;
-    position: absolute;
-    top: 15px;
+    position: fixed;
+    top: 0;
     right: 0;
     z-index: 11;
 
     &__icon {
       // color: #2c3e50;
       font-size: 25px;
-      margin: 0.5rem;
+      margin: 2px 0.5rem;
     }
 
     &__content-holder {
       position: relative;
-      top: 0;
-      right: 0;
+      top: -25px;
+      right: 45px;
       padding: 0.625rem;
       border-radius: 10px;
       background: linear-gradient(0deg, lightgrey, transparent);
@@ -38,6 +30,28 @@ h1 {
     &__color-style {
       color: #8a0000;
       font-size: 12px;
+    }
+
+    &__content {
+      padding-right: 5px;
+    }
+
+    &__color-input {
+      border-radius: 0;
+      border: none;
+      padding: 0;
+      background: unset;
+    }
+
+    &__color-input:focus {
+      outline: unset;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    background-color: #fff;
+    .user-mode {
+      position: absolute;
     }
   }
 

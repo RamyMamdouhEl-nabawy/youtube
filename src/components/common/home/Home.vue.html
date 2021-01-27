@@ -7,29 +7,28 @@
       ></i>
       <div class="user-mode__content-holder" v-if="dispayUserMenu">
         <div class="user-mode__theme-color">
-          <span>Theme Color</span>
+          <span class="user-mode__content">Theme Color</span>
           <input
+            class="user-mode__color-input"
             type="color"
-            class="px-1"
             v-on:input="customMode.backgroundColor = $event.target.value"
           />
         </div>
         <div class="user-mode__color-style">
-          <span>Text Color Style</span>
+          <span class="user-mode__content">Text Color Style</span>
           <input
+            class="user-mode__color-input"
             type="color"
-            class="px-1"
             v-on:input="customMode.color = $event.target.value"
           />
         </div>
       </div>
     </section>
-    <b-form-checkbox
-      class="col-lg-9 col-12 text-right dark-theme-toogle"
-      switch
-      @change="toogle"
-      >Dark Theme
-    </b-form-checkbox>
+    <div class="col-12 text-right dark-theme-toogle">
+      <b-form-checkbox class="col-lg-9 col-12" switch @change="toogle"
+        >Dark Theme
+      </b-form-checkbox>
+    </div>
 
     <SearchBar
       v-on:searchedVideos="updateVideos($event)"

@@ -14,8 +14,12 @@
     width: max-content;
     text-align: left;
     border: 1px solid #bbb;
-    border-radius: 3px;
+    border-radius: 10px;
     margin: 0.625rem;
+  }
+
+  &__DDL:focus {
+    outline: none;
   }
 }
 
