@@ -32,14 +32,15 @@ export default {
 }
 
 #app {
-  // font-family: Avenir, Helvetica, Arial, sans-serif;
   font-family: cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $darkgrey;
   @media screen and (min-width: 992px) {
     background-color: $page-background;
   }
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
+  // color: #2c3e50;
 }
 </style>
