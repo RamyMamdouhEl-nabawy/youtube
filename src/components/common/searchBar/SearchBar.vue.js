@@ -12,6 +12,9 @@ export default {
     };
   },
   methods: {
+    ReloadSite() {
+      window.location.reload();
+    },
     // Toggelig SearchBox in mobile screens.
     DisplaySeachBox() {
       var searchValue = this.displaySearch;
