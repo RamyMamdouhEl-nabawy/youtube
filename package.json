@@ -1,11 +1,15 @@
 {
   "name": "youtube",
+  "author": "Ramy Mamdouh El-Nabawy",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ramymamdouhel-nabawy.github.io/youtube/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
